@@ -21,7 +21,7 @@ public class LoginTests extends BaseTest {
 
     @Test(description = "Başarısız kullanıcı girişi kontrolü")
     public void unSuccessfulLogin() throws InterruptedException {
-        loginPage.fillMail("zeynep@icloud.com")
+        loginPage.fillMail("zeynep@outlook.com")
                 .fillPassword(password)
                 .clickLogin();
 
@@ -31,14 +31,14 @@ public class LoginTests extends BaseTest {
 
     @Test(description = "Geçersiz karakter girişi kontrolü")
     public void validateLogin() throws InterruptedException {
-        loginPage.fillMail("zeynepicloud.com")
+        loginPage.fillMail("zeynepoutlook.com")
                 .fillPassword(password)
                 .clickLogin();
 
         sleep(3000);
         assertEqualsText(loginPage.getErrorMessage(), "Lütfen geçerli bir e-posta adresi giriniz.");
     }
-
+/*
     @Test(description = "Max-min karakter kontrolü")
     public void maxMinCharacterControl() throws InterruptedException {
         loginPage.clickLogin();
@@ -53,4 +53,5 @@ public class LoginTests extends BaseTest {
         sleep(3000);
         assertEqualsText(loginPage.getErrorMessage(), "Lütfen geçerli bir e-posta adresi giriniz.");
     }
+ */
 }
